@@ -321,7 +321,10 @@ VERBSYMBOL	=|\\leq|\\geq|\\in|>|<|\\subseteq|\subseteq|\\subset|\\supset|\\sim|\
 <Normal>"\\bibitem"	    /* ignore args  */	{KILLARGS(1); IGNORE;}
 <Normal>"\\bibliography"    /* of these \cs */	{KILLARGS(1); IGNORE;}
 <Normal>"\\bibstyle"				{KILLARGS(1); IGNORE;}
-<Normal>" "?"\\cite"				{KILLARGS(1);} /* kill space before */
+<Normal>"~"?"\\cite"				{KILLARGS(1);} /* kill space before */
+<Normal>"~"?"\\autocite"			{KILLARGS(1);} /* kill space before */
+<Normal>"~"?"\\textcite"			{KILLARGS(1);} /* kill space before */
+<Normal>"~"?"\\Textcite"			{KILLARGS(1);} /* kill space before */
 <Normal>"\\documentstyle"			{LATEX; KILLARGS(1); IGNORE;}
 <Normal>"\\documentclass"			{LATEX; KILLARGS(1); IGNORE;}
 <Normal>"\\usepackage"				{KILLARGS(1); IGNORE;}
@@ -330,6 +333,7 @@ VERBSYMBOL	=|\\leq|\\geq|\\in|>|<|\\subseteq|\subseteq|\\subset|\\supset|\\sim|\
 <Normal>"\\index"				{KILLARGS(1);}
 	/*<Normal>"\\footnote"				{KILLARGS(1); SPACE;}*/
 <Normal>"\\label"				{KILLARGS(1); IGNORE;}
+<Normal>"\\cref"					{CITE(1); IGNORE;}
 <Normal>"\\nameref"					{CITE(1); IGNORE;}
 <Normal>"\\pageref"				{CITE(1); IGNORE;}
 <Normal>"\\pagestyle"				{KILLARGS(1); IGNORE;}
